@@ -325,7 +325,8 @@ footer{
     <section id="contact">
         <h1 class="h-primary center">Contact Us</h1>
         <div id="contact-box">
-            <form action="">
+            <form action="" method ="post">
+                {% csrf_token %}
                 <div class="form-group">
                     <label for="name">Name: </label>
                     <input type="text" name="name" id="name" placeholder="Enter your name">
