@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'welcome.apps.WelcomeConfig',
     'corsheaders',
+    'csp',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'csp.middleware.CSPMiddleware',
 ]
 
 ROOT_URLCONF = 'django_project1.urls'
@@ -88,6 +90,12 @@ DATABASES = {
 CORS_ALLOWED_ORIGINS = [
     "https://onlinemealsfix.azurewebsites.net",
 ]
+
+CSP__POLICY = {
+    'default-src': "'self'",
+    'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
+    # Add more directives as per your requirements
+}
 
 
 # Password validation
