@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-g6b6##q1#j4+o^#)pev=b4t8=-1gxeptgwj1b3%@*tefl_#43^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['onlinemealsfix.azurewebsites.net']
 
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'welcome.apps.WelcomeConfig',
     'corsheaders',
-    'csp',
+    
 ]
 
 MIDDLEWARE = [
@@ -53,7 +53,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    'csp.middleware.CSPMiddleware',
 ]
 
 ROOT_URLCONF = 'django_project1.urls'
@@ -91,11 +90,6 @@ CORS_ALLOWED_ORIGINS = [
     "https://onlinemealsfix.azurewebsites.net",
 ]
 
-CSP__POLICY = {
-    'default-src': "'self'",
-    'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
-    # Add more directives as per your requirements
-}
 
 
 # Password validation
